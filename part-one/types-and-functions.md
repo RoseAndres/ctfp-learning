@@ -70,6 +70,7 @@
       mem_seed_rand.call(12346, 1..10) => 1
       mem_seed_rand.call(1234, 1..10) => 4
    ```
+   Yes, it works now that we are memoizing the seed.
 1. Which of these C++ functions are pure? Try to memoize them and observe what happens when you call them multiple times: memoized and not.
    
     1. The factorial function from the example in the text.
