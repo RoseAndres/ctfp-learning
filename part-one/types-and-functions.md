@@ -43,10 +43,14 @@
       # using memoize function from previous question
       mem_rand = memoize(method(:rand))
 
-      rand(1..10)
-      rand(1..10)
-      mem_rand.call(1..10)
-      mem_rand.call(1..10)
+      rand(1..10) => 2
+      rand(1..10) => 8
+   
+      mem_rand.call(1..10) => 4
+      ...
+      mem_rand.call(1..10) => 4
+      ...
+      mem_rand.call(1..10) => 4
    ```
    No, `mem_rand` no longer produces a random number after the first time it is called, since it has cached the answer for that given set of arguments.
 1. Most random number generators can be initialized with a seed. Implement a function that takes a seed, calls the random number generator with that seed, and returns the result. Memoize that function. Does it work?
