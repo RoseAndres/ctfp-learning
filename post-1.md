@@ -1,6 +1,6 @@
 # Category: The Essence of Composition
-Link to original post: https://bartoszmilewski.com/2014/11/04/category-the-essence-of-composition/  
-WBM Link (just in case): https://web.archive.org/web/20230000000000*/https://bartoszmilewski.com/2014/11/04/category-the-essence-of-composition/
+[Link to original post](https://bartoszmilewski.com/2014/11/04/category-the-essence-of-composition/)  
+[WBM Link](https://web.archive.org/web/20230000000000*/https://bartoszmilewski.com/2014/11/04/category-the-essence-of-composition/) (just in case) 
 
 
 ## Definitions
