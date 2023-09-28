@@ -20,7 +20,7 @@
 ## Challenges
 1. Define a higher-order function (or a function object) `memoize` in your favorite language. This function takes a pure function `f` as an argument and returns a function that behaves almost exactly like `f`, except that it only calls the original function once for every argument, stores the result internally, and subsequently returns this stored result every time it’s called with the same argument. You can tell the memoized function from the original by watching its performance. For instance, try to memoize a function that takes a long time to evaluate. You’ll have to wait for the result the first time you call it, but on subsequent calls, with the same argument, you should get the result immediately.
    ```ruby
-      # can't take full credit for this, Copilot suggested it and I hadn't seen lambdas used as a closure before, so I accepted it and dug into it to understand.
+      # can't take full credit for this, Copilot suggested it and I hadn't seen lambdas used as closures before, so I accepted it and dug into it to understand.
       def memoize(fn)
          cache = Hash.new { |h, k| h[k] = {} }
          lambda do |*args|
