@@ -46,7 +46,7 @@
       rand(1..10) => 2
       rand(1..10) => 8
    
-      mem_rand.call(1..10) => 4
+      mem_rand.call(1..10) => 4 (will be a random number)
       ...
       mem_rand.call(1..10) => 4
       ...
@@ -54,6 +54,22 @@
    ```
    No, `mem_rand` no longer produces a random number after the first time it is called, since it has cached the answer for that given set of arguments.
 1. Most random number generators can be initialized with a seed. Implement a function that takes a seed, calls the random number generator with that seed, and returns the result. Memoize that function. Does it work?
+   ```ruby
+      def seed_rand(seed, range)
+         srand(seed)
+         rand(range)
+      end
+
+      # using memoize function from previous question
+      mem_seed_rand = memoize(method(:seed_rand))
+
+      seed_rand(12345, 1..10) => 3
+      seed_rand(12345, 1..10) => 3
+      mem_seed_rand.call(12346, 1..10) => 1 (random number w/ first seed)
+      mem_seed_rand.call(1234, 1..10) => 4 (random number w/ second seed)
+      mem_seed_rand.call(12346, 1..10) => 1
+      mem_seed_rand.call(1234, 1..10) => 4
+   ```
 1. Which of these C++ functions are pure? Try to memoize them and observe what happens when you call them multiple times: memoized and not.
    
     1. The factorial function from the example in the text.
