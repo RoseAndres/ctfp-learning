@@ -1,4 +1,4 @@
-# Learning Category Theory, Stack Languages, and Array Languages
+# Learning UIUA
 
 ## the GOAL
   The algorithm has been suggesting Category Theory (CT) to me for quite a while and a [video](https://www.youtube.com/watch?v=iTC1EiX5bM0) led me down a short rabbit hole that ended in me wanting to learn about CT and Array Languages (ALs).
