@@ -8,4 +8,4 @@ The algorithm has been suggesting Category Theory (CT) to me for quite a while a
 Below is a list of all of my notes as well as my answers to the end of post challenges. My current favorite language is Ruby, so all of my answers will be written as such!
 
 ### Part One
-  1. [Category: The Essence of Composition](post-1)
+  1. [Category: The Essence of Composition](post-1.md)
