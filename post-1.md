@@ -33,4 +33,30 @@
   Since the three functions can be composed, there is no need for parentheses.
 
 ## Challenges
+1. Implement, as best as you can, the identity function in your favorite language (or the second favorite, if your favorite language happens to be Haskell).
+   ```ruby
+     def identity(x)
+       return x
+     end
+   ```
+   
+1. Implement the composition function in your favorite language. It takes two functions as arguments and returns a function that is their composition.
+  ```ruby
+    def compose(obj, fn_b, fn_a)
+      fn_b.call(fn_a.call(obj))
+    end
+
+    def first_upcase(x);
+      x.tap { |_x| _x[0] = _x[0].upcase }
+    end
+
+    def last_three(x); x[-3..-1] end 
+
+    compose("hello", method(:first_upcase), method(:last_three)) # => "Llo"
+    compose("hello", method(:last_three), method(:first_upcase)) # => "llo"
+  ```
+1. Write a program that tries to test that your composition function respects identity.
+1. Is the world-wide web a category in any sense? Are links morphisms?
+1. Is Facebook a category, with people as objects and friendships as morphisms?
+1. When is a directed graph a category?
 
