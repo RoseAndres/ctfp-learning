@@ -6,7 +6,7 @@
 - _Set_: A collection of unique values. Can be finite (-5 <= x <= 5) or infinite (even numbers)
 - _Type_: A _Set_ of specific values. `Bool` is a two-element set of `True` and `False`. `Char` is a set of all Unicode characters like `a` and `å`.
 - _Bottom_: A special value that is added to every type, denoted by `_|_`. It corresponds to a non-terminating computation. Also evaluates to `undefined`
-- _Predicates_: Functions to Bool
+- _Predicates_: Functions that map to Bool
 - _Partial Functions_: Functions that may return _Bottom_.
 - _Total Functions_: Functions that return valid results for every possible argument.
 - _Pure Functions_: Functions that always have no side effects and produce the same result given the same input.
