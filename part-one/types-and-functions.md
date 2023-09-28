@@ -29,6 +29,7 @@
 - Functions from _unit_ to any _Type_ A are in one-to-one correspondence with the elements of that set A.
 - A function from a _Set_ A to a singleton set maps every element of A to the single element of that singleton set. For every A there is exactly one such function.
 - Pure functions from Bool just pick two values from the target type, one corresponding to `True` and another to `False`.
+- A function from _unit_ (the `void` type in Haskell) can always be called.
 
 ## Challenges
 1. Define a higher-order function (or a function object) `memoize` in your favorite language. This function takes a pure function `f` as an argument and returns a function that behaves almost exactly like `f`, except that it only calls the original function once for every argument, stores the result internally, and subsequently returns this stored result every time it’s called with the same argument. You can tell the memoized function from the original by watching its performance. For instance, try to memoize a function that takes a long time to evaluate. You’ll have to wait for the result the first time you call it, but on subsequent calls, with the same argument, you should get the result immediately.
@@ -109,5 +110,17 @@
        ```
        Dirty: the static variable `y` will maintain its value across calls to `f`. Calling `f(3)` 3 times would result in 3 different return values of `3`, `6`, and `9`.
 1. How many different functions are there from Bool to Bool? Can you implement them all?
-   
+   ```haskell
+      not :: Bool -> Bool
+      not x = !x
+
+      id :: Bool -> Bool
+      id x = x
+
+      true :: Bool -> Bool
+      true _ = True
+
+      false :: Bool -> Bool
+      false _ = False   
+   ```
 1. Draw a picture of a category whose only objects are the types Void, () (unit), and Bool; with arrows corresponding to all possible functions between these types. Label the arrows with the names of the functions.
