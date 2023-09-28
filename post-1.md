@@ -41,22 +41,50 @@
    ```
    
 1. Implement the composition function in your favorite language. It takes two functions as arguments and returns a function that is their composition.
-  ```ruby
-    def compose(obj, fn_b, fn_a)
-      fn_b.call(fn_a.call(obj))
-    end
-
-    def first_upcase(x);
-      x.tap { |_x| _x[0] = _x[0].upcase }
-    end
-
-    def last_three(x); x[-3..-1] end 
-
-    compose("hello", method(:first_upcase), method(:last_three)) # => "Llo"
-    compose("hello", method(:last_three), method(:first_upcase)) # => "llo"
-  ```
+    ```ruby
+      def compose(obj, fn_b, fn_a)
+        fn_b.call(fn_a.call(obj))
+      end
+  
+      def first_upcase(x)
+        x.tap { |_x| _x[0] = _x[0].upcase }
+      end
+  
+      def last_three(x)
+        x[-3..-1]
+      end 
+  
+      compose("hello", method(:first_upcase), method(:last_three)) # => "Llo"
+      compose("hello", method(:last_three), method(:first_upcase)) # => "llo"
+    ```
 1. Write a program that tries to test that your composition function respects identity.
-1. Is the world-wide web a category in any sense? Are links morphisms?
-1. Is Facebook a category, with people as objects and friendships as morphisms?
-1. When is a directed graph a category?
+    ```ruby
+      def compose(obj, fn_b, fn_a)
+        fn_b.call(fn_a.call(obj))
+      end
+  
+      def last_three(x)
+        x[-3..-1]
+      end
+  
+      def identity(x)
+        x
+      end
+  
+      id_comp_fn = compose("hello", method(:identity), method(:last_three)) # => "llo"
+      fn_comp_id = compose("hello", method(:last_three), method(:identity)) # => "llo"
+  
+      id_comp_fn == fn_comp_id # => true
+    ```
+1. Is the world-wide web a category in any sense? Are links morphisms?  
+  I think this falls apart for the same reason as the Facebook question...
+1. Is Facebook a category, with people as objects and friendships as morphisms?  
+    No it is not. The composition requirements fall apart pretty quickly.  
+    1. Amanda being friends with Sarah, and Sarah being friends with Mark, does not guarantee that Amanda is friends with Mark (she **_hates_** Mark).
+    1. The identity Morphism could be assumed I guess, but there's no actual (afaik) self relationship that indicates one is a friend unto themselves.
+1. When is a directed graph a category?  
+  Assuming that an edge/transition represents a Morphism, a directed graph could be considered a Category under the following conditions:  
+    1. For each graph node _N_, there is an edge from that node to itself (begins and ends on _N_)
+    1. For every path _P_ composed of edges that begins on a node _N_ and ends on a different node _M_, there is an edge from _N_ to each of the other Nodes along the path to- and including - _M_.
+   
 
