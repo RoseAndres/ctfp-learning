@@ -1,4 +1,7 @@
-# [Category: The Essence of Composition](https://bartoszmilewski.com/2014/11/04/category-the-essence-of-composition/)
+# Category: The Essence of Composition
+Link to original post: https://bartoszmilewski.com/2014/11/04/category-the-essence-of-composition/
+WBM Link (just in case): https://web.archive.org/web/20230000000000*/https://bartoszmilewski.com/2014/11/04/category-the-essence-of-composition/
+
 
 ## Definitions
 * _Object_: An abstract entity (internals are unimportant to CT)
