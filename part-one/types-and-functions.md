@@ -10,12 +10,25 @@
 - _Partial Functions_: Functions that may return _Bottom_.
 - _Total Functions_: Functions that return valid results for every possible argument.
 - _Pure Functions_: Functions that always have no side effects and produce the same result given the same input.
+- _Void_: The _Type_ that contains no values; corresponds to the Empty set (_{}_).
+- _a_: A _Type_ variable that can stand for any _Type_.
+- _absurd_: A function that takes a _Void_ argument as input. This is impossible, since a value of type _Void_ would need to be given, and there is no such value, since _Void_ contains none.
+- _unit_ or _()_: The _type_ that corresponds to a singleton set. It's a _Type_ that has only one possible value. It simply "is". Thie value is essentially a dummy value. We don't care what it is and don't have to look at it, and there will only ever be one.
+- _Parametrically Polymorphic_: Functions that can be implemented with the same formula for any type. For example: 
+   ```haskell
+      unit :: a -> ()
+      unit _ = ()
+   ```
 
 ## Notes
 - Category theory is about composing arrows.
 - Arrows can only be composed if the target object of one arrow is the same as the source object of the next arrow..
 - There is a _Category_ of _Sets_ called **Set**. In **Set**, objects are sets and morphisms are functions.
 - Strict typing in combination with pure functions that can be equated to mathematical functions make it possible to write provable code.
+- Every function of _unit_ is equivalent to picking a single element from the target _Type_.
+- Functions from _unit_ to any _Type_ A are in one-to-one correspondence with the elements of that set A.
+- A function from a _Set_ A to a singleton set maps every element of A to the single element of that singleton set. For every A there is exactly one such function.
+- Pure functions from Bool just pick two values from the target type, one corresponding to `True` and another to `False`.
 
 ## Challenges
 1. Define a higher-order function (or a function object) `memoize` in your favorite language. This function takes a pure function `f` as an argument and returns a function that behaves almost exactly like `f`, except that it only calls the original function once for every argument, stores the result internally, and subsequently returns this stored result every time it’s called with the same argument. You can tell the memoized function from the original by watching its performance. For instance, try to memoize a function that takes a long time to evaluate. You’ll have to wait for the result the first time you call it, but on subsequent calls, with the same argument, you should get the result immediately.
