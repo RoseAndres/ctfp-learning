@@ -19,6 +19,25 @@
 
 ## Challenges
 1. Define a higher-order function (or a function object) `memoize` in your favorite language. This function takes a pure function `f` as an argument and returns a function that behaves almost exactly like `f`, except that it only calls the original function once for every argument, stores the result internally, and subsequently returns this stored result every time it’s called with the same argument. You can tell the memoized function from the original by watching its performance. For instance, try to memoize a function that takes a long time to evaluate. You’ll have to wait for the result the first time you call it, but on subsequent calls, with the same argument, you should get the result immediately.
+   ```ruby
+      # can't take full credit for this, Copilot suggested it and I hadn't seen lambdas used as a closure before, so I accepted it and dug into it to understand.
+      def memoize(fn)
+         cache = Hash.new { |h, k| h[k] = {} }
+         lambda do |*args|
+            cache[args][fn] ||= fn.call(*args)
+         end
+      end
+
+      def sum(n)
+        (1..n).to_a.sum
+      end
+
+      mem_sum = memoize(method(:sum))
+
+      sum(1_000_000_000) # => takes > 10 seconds
+      mem_sum.call(1_000_000_000) # => same as above  
+      mem_sum.call(1_000_000_000) # => instant
+   ```
 1. Try to memoize a function from your standard library that you normally use to produce random numbers. Does it work?
 1. Most random number generators can be initialized with a seed. Implement a function that takes a seed, calls the random number generator with that seed, and returns the result. Memoize that function. Does it work?
 1. Which of these C++ functions are pure? Try to memoize them and observe what happens when you call them multiple times: memoized and not.
