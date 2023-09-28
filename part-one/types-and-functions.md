@@ -39,6 +39,16 @@
       mem_sum.call(1_000_000_000) # => instant
    ```
 1. Try to memoize a function from your standard library that you normally use to produce random numbers. Does it work?
+   ```ruby
+      # using memoize function from previous question
+      mem_rand = memoize(method(:rand))
+
+      rand(1..10)
+      rand(1..10)
+      mem_rand.call(1..10)
+      mem_rand.call(1..10)
+   ```
+   No, `mem_rand` no longer produces a random number after the first time it is called, since it has cached the answer for that given set of arguments.
 1. Most random number generators can be initialized with a seed. Implement a function that takes a seed, calls the random number generator with that seed, and returns the result. Memoize that function. Does it work?
 1. Which of these C++ functions are pure? Try to memoize them and observe what happens when you call them multiple times: memoized and not.
    
