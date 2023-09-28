@@ -74,15 +74,18 @@
 1. Which of these C++ functions are pure? Try to memoize them and observe what happens when you call them multiple times: memoized and not.
    
     1. The factorial function from the example in the text.
+       Pure: 5! will always be 5! and not cause any side-effects
     1. ```C++
          std::getchar()
        ```
+       Dirty: the output depends on the state of the computer
     1. ```C++
          bool f() { 
            std::cout << "Hello!" << std::endl;
            return true; 
          }
        ```
+       Dirty: the output is always the same, but there is a side-effect of printing to the console.
     1. ```C++
          int f(int x)
          {
@@ -91,5 +94,7 @@
            return y;
          }
        ```
+       Dirty: the static variable `y` will maintain its value across calls to `f`. Calling `f(3)` 3 times would result in 3 different return values of `3`, `6`, and `9`.
 1. How many different functions are there from Bool to Bool? Can you implement them all?
+   
 1. Draw a picture of a category whose only objects are the types Void, () (unit), and Bool; with arrows corresponding to all possible functions between these types. Label the arrows with the names of the functions.
