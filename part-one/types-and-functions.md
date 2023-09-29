@@ -124,3 +124,15 @@
       false _ = False   
    ```
 1. Draw a picture of a category whose only objects are the types Void, () (unit), and Bool; with arrows corresponding to all possible functions between these types. Label the arrows with the names of the functions.
+   
+   My drawing is missing the following functions (compare to [this answer](https://docs.google.com/document/u/1/d/1NcZ07pwYLbQif9hYqY8d82dh2FMf-6b-HXDuccWKfx8/pub) submitted by another reader):
+   ```haskell
+      bool2void :: Bool -> Void
+      u2void :: () -> Void
+   ```
+   
+   Also, the absurd functions, while they are able to be defined, are unable to be called, so they can essentially be ignored.
+   
+   <img src="https://github.com/RoseAndres/ctfp-learning/assets/32444239/5e9638c0-8723-4f03-b8cd-5271fdb18c17" width="50%">  
+   
+   
