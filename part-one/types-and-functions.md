@@ -125,11 +125,12 @@
    ```
 1. Draw a picture of a category whose only objects are the types Void, () (unit), and Bool; with arrows corresponding to all possible functions between these types. Label the arrows with the names of the functions.
    
-   My drawing is missing the following functions (compare to [this answer](https://docs.google.com/document/u/1/d/1NcZ07pwYLbQif9hYqY8d82dh2FMf-6b-HXDuccWKfx8/pub)([WBM](https://web.archive.org/web/20230000000000*/https://docs.google.com/document/u/1/d/1NcZ07pwYLbQif9hYqY8d82dh2FMf-6b-HXDuccWKfx8/pub)) submitted by another reader):
+   My drawing is missing the following functions:
    ```haskell
       bool2void :: Bool -> Void
       u2void :: () -> Void
    ```
+   Compare to [this answer](https://docs.google.com/document/u/1/d/1NcZ07pwYLbQif9hYqY8d82dh2FMf-6b-HXDuccWKfx8/pub)([WBM](https://web.archive.org/web/20230000000000*/https://docs.google.com/document/u/1/d/1NcZ07pwYLbQif9hYqY8d82dh2FMf-6b-HXDuccWKfx8/pub)) submitted by another reader.
    
    Also, the absurd functions, while they are able to be defined, are unable to be called, so they can essentially be ignored.
    
