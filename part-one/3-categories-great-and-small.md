@@ -2,6 +2,12 @@
 [Link to original post](https://bartoszmilewski.com/2014/12/05/categories-great-and-small/)
 
 ## Definitions
+- _Thin Category_: A category where there is at most one morphism going from any object a to any object b.
+- _Hom-set_: A set of morphisms from object a to object b in a category C
+- _Monoid_:
+     - **As a set**: A set with a binary operation that is associative and has one special element that behaves like a unit with respect to that operation.
+     - **As a category**: A single object category with a set of morphisms that follow appropriate rules of composition
+- _Extensional Equality_: For any two input strings, two outputs of two functions (arrows) are the same.
 
 ## Notes
 
